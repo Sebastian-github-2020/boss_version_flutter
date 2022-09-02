@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import './pages/Home.dart';
 import './pages/Message.dart';
 import './pages/Profile.dart';
+import './pages/News.dart';
 
 main()=>runApp( const MyApp());
 
@@ -31,7 +32,7 @@ class TabsWidget extends StatefulWidget{
 
 class _TabsState extends State<TabsWidget>{
   var _selectIndex = 0;// 当前默认的tabbar 索引
-  List widgets = [const Home(),const Message(),const Profile()];
+  List widgets = [const Home(),const Message(),const News(),const Profile()];
 
   @override
   Widget build(BuildContext context) {
@@ -56,9 +57,10 @@ class _TabsState extends State<TabsWidget>{
     },
       currentIndex: _selectIndex, // 指定 tabbar 的索引
       selectedFontSize: 16, // 设置选中的 tabbar字体大小
-      showSelectedLabels: true, // 显示选择的label
-      showUnselectedLabels: false, // 不显示未选中的bar
-      type: BottomNavigationBarType.shifting,
+      // showSelectedLabels: true, // 显示选择的label
+      // showUnselectedLabels: false, // 不显示未选中的bar
+      type: BottomNavigationBarType.fixed,   //
+      // backgroundColor: Colors.blue,
     );
   }
 
@@ -66,15 +68,16 @@ class _TabsState extends State<TabsWidget>{
     return [
       const BottomNavigationBarItem(
           icon: Icon(Icons.home),
-          backgroundColor: Colors.deepOrange,
+          // backgroundColor: Colors.blue,
           label: "首页"),
       const BottomNavigationBarItem(
           icon: Icon(Icons.message),
-          backgroundColor: Colors.blue,
           label: "消息"),
       const BottomNavigationBarItem(
+          icon: Icon(Icons.newspaper),
+          label: "资讯"),
+      const BottomNavigationBarItem(
           icon: Icon(Icons.person),
-          backgroundColor: Colors.tealAccent,
           label: "我的"),
     ];
   }
