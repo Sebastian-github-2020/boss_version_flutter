@@ -5,11 +5,14 @@ class News extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        children:const [
-          Text("资讯")
-        ],
+    return Scaffold(
+      appBar: AppBar(title: const Text("资讯"),),
+      body: Center(
+        child: Column(
+          children:const [
+            Text("资讯")
+          ],
+        ),
       ),
     );
   }

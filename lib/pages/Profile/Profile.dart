@@ -6,11 +6,14 @@ class Profile extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return Center(
-      child: Column(
-        children:const [
-          Text("我的")
-        ],
+    return Scaffold(
+      appBar: AppBar(title: const Text("我的"),),
+      body: Center(
+        child: Column(
+          children:const [
+            Text("我的")
+          ],
+        ),
       ),
     );
   }
