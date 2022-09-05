@@ -16,6 +16,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
+      appBar: AppBar(title: const Text("首页"),),
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,

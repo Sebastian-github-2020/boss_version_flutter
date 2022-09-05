@@ -3,6 +3,7 @@ import 'Home/Home.dart';
 import 'Message/Message.dart';
 import 'Profile/Profile.dart';
 import 'News/News.dart';
+import '../MyTool.dart';
 
 
 class TabsWidget extends StatefulWidget{
@@ -18,9 +19,10 @@ class _TabsState extends State<TabsWidget>{
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
+    //初始化 工具类
+    MyTool.getInstance(MediaQuery.of(context).size.width);
     return Scaffold(
-      appBar: AppBar(title: const Text("主页"),),
+
       // scaffold 附带一个底部tabbar导航
       bottomNavigationBar:_bottomNavigationBar(),
       body: widgets[_selectIndex],
