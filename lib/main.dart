@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import './pages/Tabs.dart';
+import "./pages/Login/Login.dart";
 
 main()=>runApp( const MyApp());
 
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const TabsWidget() // 根据 索引 显示指定的 页面
+      home: const Login() // 根据 索引 显示指定的 页面
     );
   }
 }

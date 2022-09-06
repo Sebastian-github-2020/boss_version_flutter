@@ -5,6 +5,7 @@ class MyTool {
   double _ratio = 0; // 屏幕宽度/设计稿宽度 比例
 
   //内部构造方法 ，避免暴露 构造函数 进行实例化
+  // 命名构造 隐藏掉 默认的构造函数
   MyTool._xxx();
 
   factory MyTool.getInstance(clientWidth) => _shareInstance(clientWidth);
@@ -29,4 +30,12 @@ class MyTool {
     print("宽度${x(w)},高度${x(w) / ratio}");
     return x(w) / ratio;
   }
+}
+
+void printLen(String? str){
+  print(str?.length);
+}
+
+void main(){
+  printLen(null);
 }

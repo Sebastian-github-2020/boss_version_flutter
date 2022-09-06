@@ -19,8 +19,7 @@ class _TabsState extends State<TabsWidget>{
 
   @override
   Widget build(BuildContext context) {
-    //初始化 工具类
-    MyTool.getInstance(MediaQuery.of(context).size.width);
+
     return Scaffold(
 
       // scaffold 附带一个底部tabbar导航
