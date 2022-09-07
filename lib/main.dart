@@ -1,6 +1,11 @@
+import 'package:boss/pages/Layout/RowLayout.dart';
 import 'package:flutter/material.dart';
 import './pages/Tabs.dart';
 import "./pages/Login/Login.dart";
+import './pages/Layout/ExpandLayout.dart';
+import './pages/Layout/GridLayout.dart';
+import './pages/Layout/StackLayout.dart';
+import './pages/Cards/CardsView.dart';
 
 main()=>runApp( const MyApp());
 
@@ -17,7 +22,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const Login() // 根据 索引 显示指定的 页面
+      // home: const StackLayout() // 根据 索引 显示指定的 页面
+      home: const CardsView() // 根据 索引 显示指定的 页面
     );
   }
 }
