@@ -42,7 +42,7 @@ class _TabsState extends State<TabsWidget>{
       selectedFontSize: 16, // 设置选中的 tabbar字体大小
       // showSelectedLabels: true, // 显示选择的label
       // showUnselectedLabels: false, // 不显示未选中的bar
-      type: BottomNavigationBarType.fixed,   //
+      type: BottomNavigationBarType.fixed,   // 四个以上 会变白 这里调整为fixed
       // backgroundColor: Colors.blue,
     );
   }

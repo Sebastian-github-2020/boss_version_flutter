@@ -11,104 +11,125 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
+  // static const Color loginColor = Color.fromRGBO(255, 70, 84, 1);
+  // static const Color loginColor = Color(0xFFff4654);
+
   @override
   Widget build(BuildContext context) {
     //初始化 工具类
-    Size size = MediaQuery.of(context).size;
+    Size size = MediaQuery
+        .of(context)
+        .size;
     MyTool.getInstance(size.width);
     MyTool? tool = MyTool.instance;
     return Scaffold(
-      // appBar: AppBar(),
-      // body: Container(
-      //     color: const Color.fromRGBO(39, 124, 224, 1),
-      //     child: Center(
-      //       child: Column(
-      //         mainAxisAlignment: MainAxisAlignment.center,
-      //         children: [
-      //           Container(
-      //             height: 119,
-      //             // width: 149,
-      //             decoration: const BoxDecoration(
-      //               image: DecorationImage(
-      //                 image: AssetImage("images/1.png"),
-      //                 alignment: Alignment.topLeft,
-      //               ),
-      //             ),
-      //           ),
-      //           Container(
-      //             color: Colors.white,
-      //             width: tool!.x(330),
-      //             height: tool.y(330, 382),
-      //             child: Column(
-      //               children: const [
-      //                 TextField(),
-      //               ],
-      //             ),
-      //           )
-      //         ],
-      //       ),
-      //     )),
-      body: Container(
-        color: const Color.fromRGBO(39, 124, 224, 1),
-        width: size.width,
-        height: size.height,
-        child: Padding(
-            padding: const EdgeInsets.only(top: 23),
-            child: Stack(
-              children: [
-                Positioned(
-                  top: 20,
-                  child: Row(
-                    children: [
-                      SizedBox(
-                        width: tool!.x(149),
-                        height: tool.y(149, 119),
-                        child: Image.asset("images/1.png"),
-                      )
-                    ],
-                  ),
+      body: SingleChildScrollView(
+        reverse: true,
+        child: Container(
+          color: Colors.white,
+          child: Column(
+            children: [
+              Container(
+                color: Colors.white,
+                height: tool!.y(size.width, 182),
+                width: size.width,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [Image.asset("images/login.png")],
                 ),
-                const Positioned(
-                  top: 100,
-                  left: 20,
-                  child: Text(
-                    "您好",
-                    style: TextStyle(fontSize: 30, color: Colors.white),
-                  ),
-                ),
-                const Positioned(
-                  top: 140,
-                  left: 20,
-                  child: Text(
-                    "欢迎查询您的浏览量",
-                    style: TextStyle(fontSize: 20, color: Colors.white),
-                  ),
-                ),
-                Positioned(
-                  top: tool.y(size.width, 215),
-                  child: SizedBox(
-                    // color: Colors.red,
-                    width: size.width,
-                    height: tool.y(347, 382),
-                    child: Center(
-                      child: Container(
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(20)),
-                        width: tool.x(347),
-                        height: tool.y(347, 382),
-                        child: Column(
-                          children:const [
-                            Text("登录",style: TextStyle(color: Colors.black,fontSize: 30),),
+              ),
+              SizedBox(
+                height: tool.y(size.width, 132),
+                width: size.width,
+              ),
+              Container(
+                color: Colors.white,
+                child: Form(
+                    child: Column(
+                      children: [
+                        TextFormField(
+                          decoration: const InputDecoration(
+                            labelText: "用户名",
 
+                            hintText: "请输入手机号",
+                            prefixIcon: Icon(
+                              Icons.person,
+
+                            ),
+                            // focusedBorder: UnderlineInputBorder(
+                            //   borderSide:
+                            //   BorderSide(color: loginColor),
+                            // ),
+                            enabledBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(color: Colors.black12),
+                            ),
+                          ),
+                        ),
+                        TextFormField(
+                          decoration: const InputDecoration(
+                            labelText: "密码",
+
+
+                            hintText: "请输入密码",
+                            prefixIcon: Icon(Icons.lock),
+                            // focusedBorder: UnderlineInputBorder(
+                            //   borderSide:
+                            //   BorderSide(color: loginColor),
+                            // ),
+                            enabledBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(color: Colors.black),
+                            ),
+                          ),
+                          obscureText: true, // 密码框
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            TextButton(
+                                onPressed: () {},
+                                child: const Text(
+                                  "立即注册",
+                                  style: TextStyle(
+                                      color: Color.fromRGBO(134, 134, 134, 1)),
+                                )),
+                            TextButton(
+                                onPressed: () {},
+                                child: const Text(
+                                  "忘记密码",
+                                  style: TextStyle(
+                                      color: Color.fromRGBO(134, 134, 134, 1)),
+                                )),
                           ],
                         ),
-                      ),
-                    ),
-                  ),
-                )
-              ],
-            )),
+                        const SizedBox(
+                          height: 50,
+                        ),
+                        Container(
+                            width: size.width,
+                            height: tool.y(size.width, 50),
+                            decoration: BoxDecoration(
+                                borderRadius:
+                                BorderRadius.circular(tool.y(size.width, 50))),
+                            child: ElevatedButton(
+                                onPressed: () {},
+                                style: OutlinedButton.styleFrom(
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(
+                                          tool.y(size.width, 50)),
+                                    ),
+                                    // side: const BorderSide(
+                                    //     width: 2,
+                                    //     color: loginColor),
+                                    primary: Colors.white,
+                                    // backgroundColor: loginColor
+                                ),
+                                child: const Text("登录")))
+                      ],
+                    )),
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }
