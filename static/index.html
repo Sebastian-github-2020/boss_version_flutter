@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <style type="text/css">
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .r{
+            width: 2rem;
+            height: 10px;
+            margin: 0.5rem;
+            border-bottom: 10px dotted red;
+        }
+    </style>
+</head>
+<body>
+     <div class="r"></div>
+   
+<script type="text/javascript">
+
+function adapter(){
+    // 获取布局视口宽度，因为开启了理想视口，布局视口=设备横向宽度
+    const dbWidth = document.documentElement.clientWidth
+    //计算跟字体大小
+    const rootFontSize = dbWidth/15
+    //设置跟字体大小
+    document.documentElement.style.fontSize = rootFontSize+'px'
+}
+adapter()
+window.onresize=adapter
+</script>
+</body>
+</html>
