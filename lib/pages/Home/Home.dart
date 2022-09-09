@@ -20,7 +20,7 @@ class _HomeState extends State<Home> {
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [Text("$num",style: const TextStyle(fontSize: 30,color: Colors.blue),)],
+            children: [Text("$num",style:  TextStyle(fontSize: 30,color: Theme.of(context).primaryColor),)],
           ),
         ),
         floatingActionButton: FloatingActionButton(

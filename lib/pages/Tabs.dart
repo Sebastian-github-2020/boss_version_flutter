@@ -15,7 +15,7 @@ class TabsWidget extends StatefulWidget{
 
 class _TabsState extends State<TabsWidget>{
   var _selectIndex = 0;// 当前默认的tabbar 索引
-  List widgets = [const Home(),const Message(),const News(),const Profile()];
+  final List _widgets = [const Home(),const Message(),const News(),const Profile()];
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +24,7 @@ class _TabsState extends State<TabsWidget>{
 
       // scaffold 附带一个底部tabbar导航
       bottomNavigationBar:_bottomNavigationBar(),
-      body: widgets[_selectIndex],
+      body: _widgets[_selectIndex],
     );
   }
 

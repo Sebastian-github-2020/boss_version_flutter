@@ -17,7 +17,7 @@ main() {
 // 设置状态栏透明
   if (Platform.isAndroid) {
     SystemUiOverlayStyle systemUiOverlayStyle = const SystemUiOverlayStyle(
-        statusBarColor: Colors.white, // 状态栏透明
+        statusBarColor: Colors.transparent, // 状态栏透明
         statusBarBrightness:
             Brightness.light // 白色图标  全局的，可以在单页面中设置 AppBar中brightness
         );
@@ -41,10 +41,10 @@ class MyApp extends StatelessWidget {
       ),
       // home: const StackLayout() // 根据 索引 显示指定的 页面
       // home:  WrapLayout() // 根据 索引 显示指定的 页面
-        home: const SafeArea(child: WebViewCom()) ,
+      //   home: const SafeArea(child: WebViewCom()) ,
 
       // home: const Login(),
-      // home: const TabsWidget(),
+      home: const TabsWidget(),
     );
   }
 }
