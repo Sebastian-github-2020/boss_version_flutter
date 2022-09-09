@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../../Components/IconContainer.dart';
 
 /// 类似flex布局
 class ExpandLayout extends StatelessWidget {
@@ -12,7 +11,7 @@ class ExpandLayout extends StatelessWidget {
     // TODO: implement build
     return Scaffold(
         appBar: AppBar(
-          title: const Text("RowLayout"),
+          title: const Text("伸缩盒布局"),
         ),
         body: Container(
           color: Colors.tealAccent,

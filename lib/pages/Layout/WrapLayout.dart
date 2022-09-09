@@ -6,8 +6,8 @@ import '../../Components/MyButton.dart';
  */
 
 class WrapLayout extends StatelessWidget {
-  WrapLayout({Key? key}) : super(key: key);
-  final List txts = ["诸界第一因", "横推邪灵世界", "修仙", "flutter", "修购"];
+  const WrapLayout({Key? key}) : super(key: key);
+  static final List txts = ["诸界第一因", "横推邪灵世界", "修仙", "flutter", "修购"];
 
   @override
   Widget build(BuildContext context) {
