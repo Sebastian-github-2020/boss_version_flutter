@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import "../Tabs.dart";
+// import "../Tabs.dart";
 
 import '../../MyTool.dart';
 
@@ -28,10 +28,14 @@ class _LoginState extends State<Login> {
     //     }));
 
     //这种跳转方式 不会保留跳转前的 路由
-    Navigator.pushAndRemoveUntil(
-        context,
-        MaterialPageRoute(builder: (context) => const TabsWidget()),
-        (route) => false);
+    // Navigator.pushAndRemoveUntil(
+    //     context,
+    //     MaterialPageRoute(builder: (context) => const TabsWidget()),
+    //     (route) => false);
+
+
+    //命名路由跳转
+    Navigator.pushNamedAndRemoveUntil(context, "/home", (route) => false);
   }
 
   // 登录方法
@@ -45,7 +49,7 @@ class _LoginState extends State<Login> {
         print(_username == "admin");
         print(_password == "123456");
       }
-      if (_username == "admin" && _password == "123456") {
+      if (_username.trim() == "admin" && _password.trim() == "123456") {
         routeToTab();
       }
     }

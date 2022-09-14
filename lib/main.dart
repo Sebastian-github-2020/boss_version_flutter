@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:boss/pages/Tabs.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import "./pages/Login/Login.dart";
@@ -31,11 +32,10 @@ class MyApp extends StatelessWidget {
             seedColor: const Color(0xFFff4654),
             primary: const Color(0xFFff4654)),
       ),
-      // home: const StackLayout() // 根据 索引 显示指定的 页面
-      // home:  WrapLayout() // 根据 索引 显示指定的 页面
-      //   home: const SafeArea(child: WebViewCom()) ,
-
       home: const Login(),
+      routes: {
+        "/home":(context)=>const TabsWidget()
+      },
 
     );
   }

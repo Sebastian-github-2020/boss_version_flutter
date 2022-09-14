@@ -26,7 +26,7 @@ class Message extends StatelessWidget {
           itemCount: _pages.length,
           // itemExtent: 50, //强制设置高度50
           itemBuilder: (item, index) {
-            print(index);
+
             return MyListTile(_pages[index]["title"], _pages[index]["subTitle"],_pages[index]["widget"]);
           }
           ),
