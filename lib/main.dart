@@ -34,8 +34,9 @@ class MyApp extends StatelessWidget {
       ),
       home: const Login(),
       routes: {
-        "/home":(context)=>const TabsWidget()
+        "/home":(context,{arguments})=> TabsWidget(arguments: arguments,)
       },
+      // onGenerateRoute: ,
 
     );
   }

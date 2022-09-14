@@ -1,13 +1,15 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'Home/Home.dart';
 import 'Message/Message.dart';
 import 'Profile/Profile.dart';
 import 'News/News.dart';
-import '../MyTool.dart';
+// import '../MyTool.dart';
 
 
 class TabsWidget extends StatefulWidget{
-  const TabsWidget({Key? key}) : super(key: key);
+  final Map<String,Object>  arguments;
+  const TabsWidget({Key? key,required this.arguments}) : super(key: key);
 
   @override
   State<StatefulWidget> createState() => _TabsState();
@@ -16,6 +18,16 @@ class TabsWidget extends StatefulWidget{
 class _TabsState extends State<TabsWidget>{
   var _selectIndex = 0;// 当前默认的tabbar 索引
   final List _widgets = [const Home(),const Message(),const News(),const Profile()];
+
+  @override
+  void initState() {
+    super.initState();
+    //接收跳转时传递的参数
+    if(kDebugMode){
+      print(widget.arguments);
+    }
+  }
+
 
   @override
   Widget build(BuildContext context) {

@@ -1,3 +1,5 @@
+import 'package:flutter/foundation.dart';
+
 class MyTool {
   static MyTool? instance;
   static double designWidth = 375; //设计稿宽度
@@ -14,8 +16,11 @@ class MyTool {
     instance ??= MyTool._xxx();
     instance?.clientWidth = clientWidth1;
     instance?._ratio = clientWidth1 / designWidth;
-    print("屏幕宽度$clientWidth1");
-    print("屏幕/设计稿 比例${instance?._ratio}");
+    if (kDebugMode) {
+      print("屏幕宽度$clientWidth1");
+      print("屏幕/设计稿 比例${instance?._ratio}");
+    }
+
     return instance;
   }
 
@@ -32,10 +37,10 @@ class MyTool {
   }
 }
 
-void printLen(String? str){
-  print(str?.length);
-}
-
-void main(){
-  printLen(null);
-}
+// void printLen(String? str){
+//   print(str?.length);
+// }
+//
+// void main(){
+//   printLen(null);
+// }

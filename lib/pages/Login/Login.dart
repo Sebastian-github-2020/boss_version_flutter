@@ -35,7 +35,7 @@ class _LoginState extends State<Login> {
 
 
     //命名路由跳转
-    Navigator.pushNamedAndRemoveUntil(context, "/home", (route) => false);
+    Navigator.pushNamedAndRemoveUntil(context, "/home", (route) => false,arguments: {"title":"name"});
   }
 
   // 登录方法
